@@ -28,3 +28,5 @@ mongoose.connect(
     console.log(`Server is running on  https://localhost:${PORT}`); 
 }))
 .catch((err) => console.log(err))
+
+export default app;
