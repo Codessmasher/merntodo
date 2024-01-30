@@ -18,7 +18,7 @@ export const addToDo = async (req, res) => {
     if (!decodedToken) {
       return res.status(401).json({ error: "Invalid token" });
     } 
-    const userId=decodedToken._id; 
+    const userId=decodedToken; 
     const newToDo = new MyToDo({
       todo, date, userId 
     });
