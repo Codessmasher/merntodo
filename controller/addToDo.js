@@ -6,7 +6,7 @@ import dotenv from "dotenv"; // Import dotenv
 dotenv.config();
 const app = express();
 app.use(express.json());
-const secret= process.env.SECRET;
+const secret= process.env.SECRET || "THISISGOINGTOBEATODOWEBAPP";
 export const addToDo = async (req, res) => {
   const { todo, date } = req.body;
 
