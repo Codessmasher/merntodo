@@ -4,9 +4,7 @@ import User from "../model/User.js";
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 
-dotenv.config({
-  path:'../.env'
-}); 
+dotenv.config(); 
 
 const secret=process.env.SECRET || "THISISGOINGTOBEATODOWEBAPP"; 
 
