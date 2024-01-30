@@ -4,9 +4,7 @@ import router from "./routes/router.js";
 import mongoose from "mongoose"; 
 import dotenv from "dotenv"; // Import dotenv
 
-dotenv.config({
-    path:'/.env'
-}); // Load environment variables from .env file
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 
@@ -25,6 +23,6 @@ mongoose.connect(
     `${MONGODB_URI}/${DB_NAME}`    
 )
 .then(() => app.listen(PORT, () => {
-    console.log(`Server is running on  https://localhost:${PORT}`); 
+    console.log(`Server is running on  localhost:${PORT}`); 
 }))
 .catch((err) => console.log(err))
