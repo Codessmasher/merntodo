@@ -1,12 +1,10 @@
-import express from "express";
 import jwt from "jsonwebtoken"; // Import jsonwebtoken
-import MyToDo from "../model/MyToDo.js";  
+import MyToDo from "../model/MyToDo.js";   
 import dotenv from "dotenv"; // Import dotenv
 
-dotenv.config();
-const app = express();
-app.use(express.json());
-const secret= process.env.SECRET || "THISISGOINGTOBEATODOWEBAPP";
+dotenv.config(); 
+const secret= process.env.SECRET;  
+
 export const addToDo = async (req, res) => {
   const { todo, date } = req.body;
 
@@ -28,6 +26,6 @@ export const addToDo = async (req, res) => {
       message: "Added Successfully", 
     });
   } catch (error) {
-    res.status(500).json({ error: "You have to login first", details: error.message }); 
+    res.status(500).json({ error: "You are not authorized", details: error.message }); 
   }
 }
