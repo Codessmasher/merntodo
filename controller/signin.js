@@ -1,12 +1,10 @@
-import express from "express";
-import jwt from 'jsonwebtoken';
 import User from "../model/User.js";
-import bcrypt from 'bcrypt';
-import dotenv from 'dotenv';
+import bcrypt from 'bcrypt'; 
+import jwt from 'jsonwebtoken';
+import dotenv from "dotenv"; // Import dotenv
 
 dotenv.config(); 
-
-const secret=process.env.SECRET || "THISISGOINGTOBEATODOWEBAPP"; 
+const secret = process.env.SECRET;    
 
 export const signin = async (req, res) => {
   const { email, password } = req.body;
